@@ -1,0 +1,142 @@
+.page-scroll-view {
+  height: 100vh;
+  background: #f6f7f9;
+}
+
+.custom-nav {
+  backdrop-filter: blur(20rpx);
+  background-color: #ffffff00;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100vw;
+  .icon {
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .title {
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #000;
+  }
+}
+.main {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  .footer {
+    width: 100vw;
+    margin-bottom: calc(env(safe-area-inset-bottom) + 10rpx);
+    text-align: center;
+    font-size: 26rpx;
+    color: #999;
+  }
+}
+
+.blur-bg {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(0px);
+  filter: blur(0px);
+  pointer-events: none;
+}
+
+.basement {
+  height: 100vh;
+  width: 100vw;
+  padding: 0 20rpx;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-sizing: border-box;
+  // background-color: #ffffff00;
+  // backdrop-filter: blur(20px);
+
+  icon {
+    margin-right: 13px;
+  }
+
+  .weui-grid {
+    text-align: center;
+    padding: 36px 10px;
+  }
+
+  .page__bd {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+  }
+  .icon-box {
+    margin-bottom: 25px;
+  }
+  .icon-box__ctn {
+    flex-shrink: 100;
+  }
+  .icon-item_box {
+    display: inline-block;
+    width: 25%;
+    padding: 3px;
+    height: 80px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .icon-name {
+    font-size: 24rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .icon-box__title {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+}
+
+.bounce {
+  animation-duration: 1.5s;
+  animation: bounce 2.6s ease;
+  transform-origin: 50% 50%;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  5.55556% {
+    transform: translateY(0);
+  }
+
+  11.11111% {
+    transform: translateY(0);
+  }
+
+  22.22222% {
+    transform: translateY(-15px);
+  }
+
+  27.77778% {
+    transform: translateY(0);
+  }
+
+  33.33333% {
+    transform: translateY(-15px);
+  }
+
+  44.44444% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

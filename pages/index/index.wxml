@@ -1,0 +1,77 @@
+<scroll-view scroll-y="{{true}}" show-scrollbar="{{false}}" paging-enabled="{{true}}" enhanced="{{true}}" bounces="{{false}}" enable-flex="{{true}}" enable-passive="{{true}}" fast-deceleration="{{false}}" using-sticky="{{true}}" scroll-anchoring=" {{true}}" binddragging="handleScroll" bindscroll="handleScroll" class="page-scroll-view">
+  <mp-navigation-bar back="{{false}}" background="#ffffff00" ext-class="custom-nav">
+    <view slot="left" bindtap="handleBackTop">
+      <image wx:if="{{filter>0}}" src="../../static/arrow-circle-down.png" class="icon bounce"></image>
+    </view>
+    <view slot="center">
+      <view class="title">地下室{{filter>0?filter:''}}</view>
+    </view>
+  </mp-navigation-bar>
+  <!-- 首页 -->
+  <scroll-view scroll-y show-scrollbar="{{false}}" enhanced="{{true}}" bounces="{{false}}" enable-flex="{{true}}" enable-passive="{{true}}" using-sticky="{{true}}" scroll-anchoring="{{true}}" fast-deceleration="{{false}}" class="main" style="filter: blur({{isIOS?filter:0}}px);">
+    <view class="" style="padding-top:{{navBarHeight}}px">
+      <view class="weui-article" style="padding-top:20rpx">
+        <view class="weui-article__section">
+          <view class="weui-article__h2">章标题</view>
+          <view class="weui-article__section">
+            <view class="weui-article__h3">1.1 节标题</view>
+            <view class="weui-article__p">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                              consequat.
+            </view>
+          </view>
+          <view class="weui-article__section">
+            <view class="weui-article__h3">1.2 节标题</view>
+            <view class="weui-article__p">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </view>
+          </view>
+          <view class="weui-article__section">
+            <view class="weui-article__h3">1.3 节标题</view>
+            <view class="weui-article__p">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="footer" bindtap="handleScrollView">下滑查看更多</view>
+  </scroll-view>
+  <!-- 模糊背景占位 -->
+  <view class="blur-bg" wx:if="{{!isIOS}}" style="backdrop-filter: blur({{filter}}px)"></view>
+  <!-- 地下室 -->
+  <scroll-view scroll-y show-scrollbar="{{false}}" enhanced="{{true}}" bounces="{{false}}" enable-flex="{{true}}" enable-passive="{{true}}" using-sticky="{{true}}" scroll-anchoring="{{true}}" fast-deceleration="{{false}}" class="basement">
+    <view class="page__bd" style="padding-top:{{navBarHeight}}px">
+      <view class="icon-box">
+        <view class="icon-box__title">描边型</view>
+        <view class="weui-grids">
+          <block wx:for="{{iconList}}" wx:key="index">
+            <view class="weui-grid">
+              <mp-icon icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}"></mp-icon>
+              <view class="weui-grid__label">{{item.icon}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="icon-box">
+        <view class="icon-box__title">填充型</view>
+        <view class="weui-grids">
+          <block wx:for="{{iconList}}" wx:key="index">
+            <view class="weui-grid">
+              <mp-icon type="filled" icon="{{item.icon}}" color="{{item.color}}" size="{{item.size}}"></mp-icon>
+              <view class="weui-grid__label">{{item.icon}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</scroll-view>
